@@ -79,19 +79,48 @@ class _MyHomePageState extends State<MyHomePage> {
                       ],
                     )),
               ])),
-          Row(
-            children: [
-              ElevatedButton(
-                  onPressed: () => null,
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Icon(Icons.add),
-                      Text("Personal Expense"),
-                      Icon(Icons.person_pin_sharp)
-                    ],
-                  ))
-            ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Container(
+                  width: MediaQuery.of(context).size.width * 0.45,
+                  decoration: BoxDecoration(
+                      color: Color(0xff009F8C),
+                      borderRadius: BorderRadius.circular(10)),
+                  child: TextButton(
+                      onPressed: () => null,
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "Add Expense",
+                            style: TextStyle(fontSize: 12, color: Colors.white),
+                          ),
+                          Icon(
+                            Icons.person_pin_sharp,
+                            color: Colors.white,
+                          )
+                        ],
+                      )),
+                )
+              ],
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: SizedBox(
+              width: double.maxFinite,
+              child: Text(
+                "Expenses",
+                style: TextStyle(color: Color(0xff7C7C7C), fontSize: 12),
+                textAlign: TextAlign.start,
+              ),
+            ),
           )
         ],
       ),
